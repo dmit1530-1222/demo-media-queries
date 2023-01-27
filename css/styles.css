@@ -1,0 +1,54 @@
+/* all generic styles go at the top of the CSS file and are not in a media query - they will apply to all screens */
+/* Develop and design "Mobile First", which means the generic styles apply to the smallest screen and above */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* main element will be the fluid to fixed width container */
+main {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+div:first-of-type {
+    padding: 2rem;
+    background-color: tomato;
+}
+
+div:nth-of-type(2) {
+    padding: 2rem;
+    background-color: khaki
+}
+
+div:last-of-type {
+    padding: 2rem;
+    background-color: seagreen;
+}
+
+/* When changing the CSS for a larger screen, use a @media rule after the generic CSS */
+/* For the condition, use min-width. Now that CSS will apply at that width and beyond */
+@media screen and (min-width: 700px) {
+    div:first-of-type {
+        background-color: rebeccapurple;
+    }
+}
+
+/* Additional CSS changes can be applied with more media queries, going from the smaller width to larger
+ */
+ @media screen and (min-width: 1000px) {
+    div:first-of-type {
+        background-color: mediumslateblue
+    }
+    div:nth-last-of-type(2) {
+        background-color: olive;
+    }
+ }
+
+ /* add another media query to change the container width for larger screens */
+ @media screen and (min-width: 1800px) {
+    main {
+        max-width: 1700px;
+    }
+ }
